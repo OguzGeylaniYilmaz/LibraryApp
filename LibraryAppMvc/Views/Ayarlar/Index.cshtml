@@ -1,0 +1,71 @@
+﻿@using LibraryAppMvc.Models.Entity
+@model List<Admin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Admin/plugins/fontawesome-free/css/all.min.css">
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Kullanıcı</th>
+        <th>Yetki</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.Kullanici</td>
+            <td>@x.Yetki</td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/Ayarlar/AdminGetir/@x.ID">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Düzenle
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-danger btn-sm" href="/Ayarlar/AdminSil/@x.ID">
+                    <i class="fas fa-trash">
+                    </i>
+                    Sil
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    Admin Ekle
+</button>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" style="text-align:center; color:black">Yeni Admin</h2>
+            </div>
+            <form method="post" action="/Ayarlar/YeniAdmin/">
+                <div class="modal-body">
+                    <label>Kullanıcı Adı</label>
+                    <input type="text" name="Kullanici" class="form-control" />
+                    <label style="margin-top:15px">Şifre</label>
+                    <input type="text" name="Sifre" class="form-control" />
+                    <label style="margin-top:15px">Yetki</label>
+                    <input type="text" name="Yetki" class="form-control" style="margin-bottom:15px" />
+                    <button class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>

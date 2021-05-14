@@ -1,0 +1,80 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {font-family: "Lato", sans-serif;}
+
+.sidebar {
+  height: 100%;
+  width: 230px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 230px; 
+  padding: 0px 10px;
+}
+
+@@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="#"><i class="glyphicon glyphicon-home"></i>&nbsp; Home</a>
+        <a href="/Kategori/Index/"><i class="glyphicon glyphicon-list"></i>&nbsp; Categories</a>
+        <a href="/Kitap/Index/"><i class="glyphicon glyphicon-book"></i>&nbsp; Books</a>
+        <a href="/Yazar/Index/"><i class="glyphicon glyphicon-pencil"></i>&nbsp; Writers</a>
+        <a href="/Uye/Index/"><i class="glyphicon glyphicon-user"></i>&nbsp; Members</a>
+        <a href="/Personel/Index/"><i class="glyphicon glyphicon-phone"></i>&nbsp; Employees</a>
+        <a href="/KitapIslemleri/Index/"><i class="glyphicon glyphicon-circle-arrow-left"></i>&nbsp; Get Borrowed Book</a>
+        <a href="/KitapIslemleri/OduncVer/"><i class="glyphicon glyphicon-circle-arrow-right"></i>&nbsp; Give Borrowed Book</a>
+        <a href="/Istatistik/Index/"><i class="glyphicon glyphicon-sort-by-alphabet"></i>&nbsp; Statistics</a>
+        <a href="#"><i class="glyphicon glyphicon-earphone"></i>&nbsp; Announcements</a>
+        <a href="/Islem/Index/"><i class="glyphicon glyphicon-print"></i>&nbsp; Transactions</a>
+        <a href="#"><i class="glyphicon glyphicon-picture"></i>&nbsp; Galery</a>
+        <a href="/Vitrin/Index/"><i class="glyphicon glyphicon-gift"></i>&nbsp; Showcase</a>
+        @if (User.IsInRole("A"))
+        {
+            <a href="/Ayarlar/Index/"><i class="glyphicon glyphicon-cog"></i>&nbsp; Settings</a>
+            <a href="#"><i class="glyphicon glyphicon-wrench"></i>&nbsp; Help</a>
+        }
+        <a href="/Login/GirisYap/"><i class="glyphicon glyphicon-remove-circle"></i>&nbsp; Exit</a>
+
+    </div>
+
+    <div class="main">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

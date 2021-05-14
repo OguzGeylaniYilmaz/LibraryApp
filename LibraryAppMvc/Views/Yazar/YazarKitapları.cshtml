@@ -1,0 +1,27 @@
+﻿@using LibraryAppMvc.Models.Entity
+@model List<Kitaplar>
+@{
+    ViewBag.Title = "YazarKitapları";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+
+<h2 style="text-align:center;margin-top:15px">Yazar : @ViewBag.yzrAd</h2>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Kitap Adı</th>
+        <th>Kategori</th>
+        <th>Yayınevş</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+         <td>@x.KitapID</td>
+         <td>@x.KitapAd</td>
+         <td>@x.Kategoriler.KategoriAd</td>
+         <td>@x.Yayınevi</td>
+        </tr>
+    }
+</table>
+

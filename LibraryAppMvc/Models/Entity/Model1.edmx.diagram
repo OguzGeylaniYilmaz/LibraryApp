@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="059032cd1e914254b2269a4d9607241b" Name="Diagram1">
+        <EntityTypeShape EntityType="MvcLibraryDBModel.Cezalar" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcLibraryDBModel.Hareketler" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcLibraryDBModel.Kasalar" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcLibraryDBModel.Kategoriler" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcLibraryDBModel.Kitaplar" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcLibraryDBModel.Personeller" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcLibraryDBModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcLibraryDBModel.Uyeler" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcLibraryDBModel.Yazarlar" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="MvcLibraryDBModel.FK_Cezalar_Hareketler" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcLibraryDBModel.FK_Cezalar_Uyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcLibraryDBModel.FK_Hareketler_Kitaplar" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcLibraryDBModel.FK_Hareketler_Uyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcLibraryDBModel.FK_Kitaplar_Kategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcLibraryDBModel.FK_Kitaplar_Yazarlar" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcLibraryDBModel.FK_Hareketler_Personeller" />
+        <EntityTypeShape EntityType="MvcLibraryDBModel.Hakkimizda" Width="1.5" PointX="8.375" PointY="7.75" />
+        <EntityTypeShape EntityType="MvcLibraryDBModel.Iletisim" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="MvcLibraryDBModel.Mesajlar" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MvcLibraryDBModel.Duyurular" Width="1.5" PointX="10.375" PointY="3.75" />
+        <EntityTypeShape EntityType="MvcLibraryDBModel.Admin" Width="1.5" PointX="3.375" PointY="10.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

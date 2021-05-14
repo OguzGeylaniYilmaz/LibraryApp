@@ -1,0 +1,23 @@
+﻿@model LibraryAppMvc.Models.Entity.Personeller
+
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        @Html.LabelFor(x => x.PersonelID)
+        @Html.TextBoxFor(x => x.PersonelID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.PersonelAd)
+        @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+
+

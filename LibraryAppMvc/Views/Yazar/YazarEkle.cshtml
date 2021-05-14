@@ -1,0 +1,33 @@
+﻿@model LibraryAppMvc.Models.Entity.Yazarlar
+
+@{
+    ViewBag.Title = "YazarEkle";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+<h2 style="text-align:center;color:black">Yazar Bilgileri</h2>
+<br />
+<form class="form-group" method="post">
+    <br />
+    <div style="">
+        <label>Yazar Adı</label>
+        @Html.TextBoxFor(x => x.YazarAd, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.YazarAd)
+    </div>
+    <br />
+    <div style="">
+        <label>Yazar Soyadı</label>
+        @Html.TextBoxFor(x => x.YazarSoyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.YazarSoyad)
+    </div>
+    <br />
+    <div style="">
+        <label>Yazar Detayı</label>
+        @Html.TextAreaFor(x => x.Detay, new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="">
+      <button class="btn btn-info">Yazar Ekle</button>
+    </div>
+</form>
+
+

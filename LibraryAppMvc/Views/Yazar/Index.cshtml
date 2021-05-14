@@ -1,0 +1,35 @@
+﻿@using LibraryAppMvc.Models.Entity
+@model List<Yazarlar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+<br />
+<table class="table table-striped" style="margin-top:10px">
+    <tr>
+        <th>Yazar ID</th>
+        <th>Yazar Ad</th>
+        <th>Yazar Soyad</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Yazarın Kitapları</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.YazarID</td>
+            <td>@x.YazarAd</td>
+            <td>@x.YazarSoyad</td>
+            <td>
+                @Html.ActionLink("Sil", "YazarSil", new { id = x.YazarID },
+           new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinize emin misiniz?')" })
+            </td>
+            <td><a href="/Yazar/YazarGetir/@x.YazarID" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Yazar/YazarKitapları/@x.YazarID" class="btn btn-success">İncele</a></td>
+        </tr>
+    }
+</table>
+<a href="/Yazar/YazarEkle/" class="btn btn-primary">Yeni Yazar Ekle</a>
+
+

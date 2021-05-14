@@ -1,0 +1,62 @@
+﻿@model LibraryAppMvc.Models.Entity.Uyeler
+
+@{
+    ViewBag.Title = "UyeEkle";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <br />
+        <label>Üye Adı</label>
+        @Html.TextBoxFor(x => x.UyeAd, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UyeAd, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <br />
+        <label>Üye Soyadı</label>
+        @Html.TextBoxFor(x => x.UyeSoyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UyeSoyad, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <br />
+        <label>Mail Adresi</label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Mail, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <br />
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(x => x.KullanıcıAd, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.KullanıcıAd, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <br />
+        <label>Şifre</label>
+        @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UyeAd, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <br />
+        <label>Fotoğraf</label>
+        @Html.TextBoxFor(x => x.Fotograf, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Fotograf, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <br />
+        <label>Telefon</label>
+        @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Telefon, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <br />
+        <label>Okul</label>
+        @Html.TextBoxFor(x => x.Okul, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Okul, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-primary" id="Btn1">Üye Ekle</button>
+    </div>
+</form>
+
+

@@ -1,0 +1,39 @@
+﻿@model LibraryAppMvc.Models.Entity.Hareketler
+
+@{
+    ViewBag.Title = "OduncVer";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <br />
+    <div style="">
+        <label>Üye ID</label>
+        @Html.DropDownListFor(x => x.ID, (List<SelectListItem>)ViewBag.uyeler, new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="">
+        <label>Kitap Adı</label>
+        @Html.DropDownListFor(x => x.Kitaplar.KitapID, (List<SelectListItem>)ViewBag.kitaplar, new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="">
+        <label>Personel</label>
+        @Html.DropDownListFor(x => x.Personeller.PersonelID, (List<SelectListItem>)ViewBag.personeller, new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="">
+        <label>Alış Tarihi</label>
+        <input type="text" name="AlisTarih" class="form-control" value="@DateTime.Now.ToShortDateString()" />
+    </div>
+    <br />
+    <div style="">
+        <label>İade Tarihi</label>
+        <input type="text" name="IadeTarih" class="form-control" value="@DateTime.Now.AddDays(9).ToShortDateString()" />
+    </div>
+    <br />
+    <div style="">
+        <button class="btn btn-info">Ödünç Kitap Ver</button>
+        <input type="hidden" value="false" name="IslemDurum" />
+    </div>
+</form>

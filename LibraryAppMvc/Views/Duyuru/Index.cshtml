@@ -1,0 +1,33 @@
+﻿@using LibraryAppMvc.Models.Entity
+@model List<Duyurular>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+<h2 style="text-align:center"><i>Duyuru Bilgileri</i></h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Duyuru No</th>
+        <th>Kategori</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+        <th>İçerik</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.ID</th>
+            <td>@x.Kategori</td>
+            <td>@Convert.ToDateTime(x.Tarih).ToString("dd/MM/yyyy")</td>
+            <td><a href="/Duyuru/DuyuruSil/@x.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Duyuru/DuyuruDetay/@x.ID" class="btn btn-success">İncele</a></td>
+        </tr>
+    }
+</table>
+<a href="/Duyuru/DuyuruEkle/" class="btn btn-primary">Duyuru Ekle</a>
+
+
+
+

@@ -1,0 +1,30 @@
+﻿@model LibraryAppMvc.Models.Entity.Duyurular
+@{
+    ViewBag.Title = "DuyuruDetay";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+
+@using (Html.BeginForm("DuyuruGuncelle", "Duyuru", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        <label>Duyuru ID</label>
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+        <br />
+        <label>Kategori</label>
+        @Html.TextBoxFor(x => x.Kategori, new { @class = "form-control" })
+        <br />
+        <label>İçerik</label>
+        @Html.TextAreaFor(x => x.Icerik, new { @class = "form-control" })
+        <br />
+        <label>Tarih</label>
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+
+
+
+

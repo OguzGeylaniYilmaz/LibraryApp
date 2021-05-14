@@ -1,0 +1,27 @@
+﻿@model LibraryAppMvc.Models.Entity.Admin
+
+@{
+    ViewBag.Title = "AdminGetir";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+
+@using (Html.BeginForm("AdminGuncelle", "Ayarlar", FormMethod.Post))
+{
+    <div style="margin-top:15px"></div>
+    <div>
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(x => x.Kullanici, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Şifre</label>
+        @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Yetki</label>
+        @Html.TextBoxFor(x => x.Yetki, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-primary">
+        Güncelle
+    </button>
+}
+

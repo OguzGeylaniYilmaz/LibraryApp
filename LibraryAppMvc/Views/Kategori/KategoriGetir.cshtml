@@ -1,0 +1,21 @@
+﻿@model LibraryAppMvc.Models.Entity.Kategoriler
+
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+<div class="form-group">
+    <br />
+    @Html.LabelFor(x => x.KategoriID)
+    @Html.TextBoxFor(x => x.KategoriID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.KategoriAd)
+    @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
+</div>
+<div>
+    <button class="btn btn-warning">Güncelle</button>
+</div>
+}

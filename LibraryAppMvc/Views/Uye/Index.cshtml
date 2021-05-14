@@ -1,0 +1,43 @@
+﻿
+@using LibraryAppMvc.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Uyeler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+<h2 style="text-align:center">Üye Bilgileri</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Üye Adı</th>
+        <th>Üye Soyadı</th>
+        <th>Mail</th>
+        <th>Telefon</th>
+        <th>Okul</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Kitap Geçmişi</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.UyeID</th>
+            <td>@x.UyeAd</td>
+            <td>@x.UyeSoyad</td>
+            <td>@x.Mail</td>
+            <td>@x.Telefon</td>
+            <td>@x.Okul</td>
+            <td><a href="/Uye/UyeSil/@x.UyeID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Uye/UyeGetir/@x.UyeID" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Uye/UyeKitapGecmisi/@x.UyeID" class="btn btn-success">İncele</a></td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+<a href="/Uye/UyeEkle/" class="btn btn-primary">Üye Ekle</a>
+

@@ -1,0 +1,43 @@
+﻿@model LibraryAppMvc.Models.Entity.Hareketler
+
+@{
+    ViewBag.Title = "IadeEt";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+
+@using (Html.BeginForm("IadeGuncelle", "KitapIslemleri", FormMethod.Post))
+{
+<div class="form-group">
+    <br />
+    <label>ID</label>
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    <label>Kitap Adı</label>
+    @Html.TextBoxFor(x => x.Kitaplar.KitapAd, new { @class = "form-control" })
+    <br />
+    <label>Üye Adı</label>
+    @Html.TextBoxFor(x => x.Uyeler.UyeAd, new { @class = "form-control" })
+    <br />
+    <label>Personel Adı</label>
+    @Html.TextBoxFor(x => x.Personeller.PersonelAd, new { @class = "form-control" })
+    <br />
+    <label>Alış Tarihi</label>
+    @Html.TextBoxFor(x => x.AlisTarih, "{0:dd.MM.yyyy }", new { @class = "form-control" })
+    <br />
+    <label>İade Tarihi</label>
+    @Html.TextBoxFor(x => x.IadeTarih, "{0:dd.MM.yyyy }", new { @class = "form-control" })
+    <br />
+    <label>Üyenin Getirdiği Tarih</label>
+   <input  type="text" class="form-control" name="UyeIadeTarih" value="@DateTime.Now.ToShortDateString()"/>
+    <br />
+    <label>Geç Getirilen Gün Sayısı</label>
+    <input type="text" class="form-control" id="Gun" value="@ViewBag.trh" />
+</div>
+    <div>
+        <button class="btn btn-warning">İade Kitabı Al</button>
+    </div>
+}
+
+
+
+

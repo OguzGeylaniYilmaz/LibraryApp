@@ -1,0 +1,18 @@
+﻿@model LibraryAppMvc.Models.Entity.Kategoriler
+
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <br />
+        <label>Kategori Adı</label>
+        <input type="text" class="form-control" name="KategoriAd"/>
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-primary" id="Btn1">Kategori Ekle</button>
+    </div>
+</form>
+

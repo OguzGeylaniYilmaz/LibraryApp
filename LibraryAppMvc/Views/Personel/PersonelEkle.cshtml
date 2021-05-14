@@ -1,0 +1,21 @@
+﻿@model LibraryAppMvc.Models.Entity.Personeller
+
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <br />
+        <label>Personel Adı</label>
+        @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PersonelAd, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-primary" id="Btn1">Kategori Ekle</button>
+    </div>
+</form>
+
+
+

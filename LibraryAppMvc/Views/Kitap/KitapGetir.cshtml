@@ -1,0 +1,47 @@
+﻿@model LibraryAppMvc.Models.Entity.Kitaplar
+@{
+    ViewBag.Title = "KitapGetir";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+
+@using (Html.BeginForm("KitapGuncelle", "Kitap", FormMethod.Post))
+{
+    <br />
+    <div class="form-group">
+        <label>Kitap ID</label>
+        @Html.TextBoxFor(x => x.KitapID, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(x => x.KitapAd, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Kategori</label>
+        @Html.DropDownListFor(x => x.Kategoriler.KategoriID, (List<SelectListItem>)ViewBag.ktp, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Yazar</label>
+        @Html.DropDownListFor(x => x.Yazarlar.YazarID, (List<SelectListItem>)ViewBag.yzr, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Basım Yılı</label>
+        @Html.TextBoxFor(x => x.BasımYılı, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Yayınevi</label>
+        @Html.TextBoxFor(x => x.Yayınevi, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Sayfa Sayısı</label>
+        @Html.TextBoxFor(x => x.Sayfa, new { @class = "form-control" })
+    </div>
+
+    <button class="btn btn-primary">Güncelle</button>
+    <input type="hidden" name="Durum" value="True" />
+}

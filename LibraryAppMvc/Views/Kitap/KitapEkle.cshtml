@@ -1,0 +1,43 @@
+﻿@model LibraryAppMvc.Models.Entity.Kitaplar
+@{
+    ViewBag.Title = "KitapEkle";
+    Layout = "~/Views/Shared/_OriginalLayout.cshtml";
+}
+<br />
+<form class="form-group" method="post">
+    <br />
+    <div style="">
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(x => x.KitapAd, new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="">
+        <label>Kategori</label>
+        @Html.DropDownListFor(x => x.Kategoriler.KategoriID, (List<SelectListItem>)ViewBag.ktp, new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="">
+        <label>Yazar </label>
+        @Html.DropDownListFor(x => x.Yazarlar.YazarID, (List<SelectListItem>)ViewBag.yzr, new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="">
+        <label>Basım Yılı</label>
+        @Html.TextBoxFor(x => x.BasımYılı, new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="">
+        <label>Yayınevi</label>
+        @Html.TextBoxFor(x => x.Yayınevi, new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="">
+        <label>Sayfa Sayısı</label>
+        @Html.TextBoxFor(x => x.Sayfa, new { @class = "form-control" })
+    </div>
+    <br />
+    <div style="">
+        <button class="btn btn-info">Kitap Ekle</button>
+    </div>
+    <input type="hidden" name="Durum" value="True" />
+</form>
